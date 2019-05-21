@@ -5,6 +5,20 @@
 class App {
   constructor() {
     // TODO(you): Implement the constructor and add fields as necessary.
+
+    const menuElement = document.querySelector('#menu');
+    const musicElement = document.querySelector('#music');
+
+    this.toMusic = this.toMusic.bind(this);
+    document.addEventListener('toMusic', this.toMusic);
+
+    this.menu = new MenuScreen(menuElement);
+    this.music = new MusicScreen(musicElement);
   }
+
+  toMusic() {
+    this.music.getGifs();
+  }
+  
   // TODO(you): Add methods as necessary.
 }
